@@ -110,3 +110,27 @@ Kubernetes/containers (OKE, EKS, AKS) with managed Postgres, object storage and 
 provider, behind a provider load balancer + WAF. Provider specifics only in `deploy/<provider>/`
 (Terraform later). India region default (ADR-015); a region per tenant is a registry field so
 GCC tenants can be hosted in-region later.
+
+**ADR-019 · OCI as the first hosting provider** — Accepted (2026-10-16).
+Production and pilots run on Oracle Cloud Infrastructure, India region (Mumbai primary,
+Hyderabad for DR/backups): OKE (or a VM with Docker Compose for the pilot), OCI Database with
+PostgreSQL, Object Storage, OCI Vault for per-tenant keys, Load Balancer + WAF. Provider
+specifics stay in `deploy/oci/`; the app keeps S3-compatible storage and KMS interfaces so AWS or
+Azure remain possible (ADR-018).
+
+**ADR-020 · State rollout order** — Accepted (2026-10-16).
+Maharashtra → Gujarat → Andhra Pradesh → Tamil Nadu → Odisha. Each state is a new jurisdiction
+pack (PT, LWF, Shops & Establishments, fire, lifts, SPCB practice, state labour-code rules,
+holidays) built by its own task, never by changing the core.
+
+**ADR-021 · Pricing model deferred; entitlements stay generic** — Accepted (2026-10-16).
+Commercial model is not decided (likely per company/tenant). The plans/entitlements model in the
+control plane must not hard-code a unit of pricing: plans hold limits (units, users, AI tokens,
+storage, modules) and metering records all of them, so per-company, per-unit or per-employee
+pricing can be configured later without code changes.
+
+**ADR-022 · Healthcare pilot covers clinics and nursing homes** — Accepted (2026-10-16).
+First pilots: small healthcare (clinics, nursing homes, small hospitals) and a small
+manufacturer. The healthcare pack must work for a 0-bed clinic (BMW, PC-PNDT, AERB, drug licence,
+Shops & Establishments, fire where applicable) as well as a nursing home; onboarding offers a
+"clinic" quick profile that asks ≤ 12 questions.

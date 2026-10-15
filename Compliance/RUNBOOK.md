@@ -13,6 +13,20 @@ time, enforced by a lock (ADR-014).
                GitHub: LearningX-BK/Stridenity  main  /Compliance   (single source of truth)
 ```
 
+## Quick start from the Claude mobile app (no PC needed)
+
+1. Claude app → Code → new session → repository **LearningX-BK/Stridenity**, branch `main`.
+2. First session only, send the plan-review prompt from §1 below, but replace its last line with
+   `4. Then run /next-task T00 steps=2. Work directly on main and push every checkpoint.`
+3. Every later session, send: `/next-task steps=2`
+   (if slash commands are not accepted: `cd Compliance, read Compliance/CLAUDE.md and follow
+   Compliance/.claude/commands/next-task.md with steps=2, working directly on main`).
+4. Reply ends with `TASK_CONTINUE Txx` → start a new session with the same prompt.
+   `TASK_COMPLETE Txx` → same prompt again picks the next task. `TASK_BUSY local` → the PC loop is
+   running; stop it first.
+5. Back on the PC later: `git pull` in `C:\GenAIGenerated\Stridenity\Compliance` (after running
+   `scripts\setup-git-sync.ps1` once).
+
 ---
 
 ## 0 · One-time setup (Windows)

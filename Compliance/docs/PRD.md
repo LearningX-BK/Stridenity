@@ -83,10 +83,10 @@ which is then shown on every report as a control weakness.
 
 ## 4. Scope v1
 
-**Jurisdictions:** India — Central + **Maharashtra** fully; pack structure ready for any state
-(Odisha and Gujarat next, see §11).
-**Sectors (packs):** Manufacturing (factory), Healthcare (hospital / nursing home / diagnostic
-centre), Construction (building & other construction work, RERA projects), Electrical
+**Jurisdictions:** India — Central + **Maharashtra** fully; then Gujarat → Andhra Pradesh → Tamil Nadu → Odisha
+(ADR-020); pack structure ready for any state.
+**Sectors (packs):** Manufacturing (factory), Healthcare (clinic / nursing home / small hospital /
+diagnostic centre — clinics without beds are a first-class profile), Construction (building & other construction work, RERA projects), Electrical
 (contractors & installations). Cross-sector: labour & social security, tax & corporate,
 environment, fire & building safety, POSH, data protection (DPDP).
 **Tenancy & operation:** managed multi-tenant SaaS hosted by Stridenity on a cloud provider. A tenant =
@@ -252,6 +252,8 @@ Three demo tenants, each exercising a sector pack, all fictional:
    hazardous waste (spent oil, ETP sludge), CTO with 42 conditions, weighing scales.
 2. **Kalyan Care Multispeciality Hospital** — 60-bed hospital, Kalyan (MH); X-ray + CT, 2 USG
    machines, in-house pharmacy, NDPS stock, BMW via CBWTF, lift, fire NOC, NABH entry-level aspirant.
+2b. **Shubham Family Clinic & Diagnostics** — single-doctor clinic with day-care, Dombivli (MH);
+   9 staff, 1 USG machine, small pharmacy, BMW via CBWTF, no beds (pilot profile for clinics).
 3. **Konkan Infra & Electricals LLP** — builder + electrical contractor; one MahaRERA project,
    240 construction workers (mostly via contractors), electrical contractor licence, 11 kV
    substation at site.
@@ -295,11 +297,14 @@ Onboarding to first register < 30 min; ≥ 95% on-time filing in pilot month 3; 
 completeness ≥ 90%; AI draft acceptance (accepted or lightly edited) ≥ 70%; inspection pack
 generated < 2 min; zero SoD violations in approved items.
 
-## 11. Open questions (owner: Bikash)
+## 11. Decisions taken (2026-10-16) and open questions
 
-1. Product name — keep **ANUPAL** or another?
-2. Second state after Maharashtra — Odisha (M-Lite network) or Gujarat?
-3. Commercial model — per unit per month, per employee band, or consultant/CA-firm multi-client
-   licence (partner channel)? Affects tenancy model for consultants managing many clients.
-4. First pilot customer sector — hospital or manufacturer?
-5. Hosting provider for the SaaS — OCI Mumbai/Hyderabad (aligned with the HMS work), AWS Mumbai or Azure Pune? (Design is provider-agnostic.)
+| Topic | Decision |
+|---|---|
+| Product name | **ANUPAL** for now; kept in one config place so it can change later |
+| State rollout | Maharashtra → Gujarat → Andhra Pradesh → Tamil Nadu → Odisha (ADR-020) |
+| First pilots | **Both**: small healthcare (clinics, nursing homes, small hospitals) and a small manufacturer |
+| Hosting | **OCI** India region (Mumbai, DR Hyderabad) to start (ADR-019); design stays provider-agnostic |
+| Commercial model | **Deferred.** Likely per company (tenant). Plans/entitlements stay generic so any model fits later |
+
+Still open: commercial model and price points; partner (CA/consultant) channel; SME reviewer for content.

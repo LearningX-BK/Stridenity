@@ -9,3 +9,5 @@
 - Native mobile apps (beyond PWA).
 - Consultant/CA-firm partner console (multi-client dashboard, white-label).
 - Payment gateway for subscription billing (Razorpay/Stripe India).
+- State packs after Gujarat, in order: Andhra Pradesh, Tamil Nadu, Odisha (ADR-020) — add as tasks like T35.
+- Commercial model & price points (ADR-021) — likely per company; decide before T27 billing export is finalised.

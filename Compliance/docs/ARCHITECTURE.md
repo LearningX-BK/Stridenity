@@ -198,7 +198,8 @@ data residency, tenant data export/delete, processor role, breach runbook (`docs
   filter) + LocalFS + mock LLM; `scripts/dev.ps1` / `dev.sh`. Ports: **API 8091, UI 5191**
   (dev); **API 8191, UI 5291** (`scripts/ui_check.py`) — avoids TRIAX (8077/5177).
 - **Pilot**: one VM, Docker Compose — `web` (nginx + SPA), `api`, `worker`, `postgres`, `minio`.
-- **Production SaaS**: provider-managed containers/Kubernetes (OKE/EKS/AKS), managed Postgres
+- **First provider: OCI** (ADR-019) — Mumbai primary, Hyderabad DR.
+- **Production SaaS**: provider-managed containers/Kubernetes (OKE first; EKS/AKS possible), managed Postgres
   (HA, PITR), object storage, KMS, load balancer + WAF, India region; observability via
   OpenTelemetry → provider monitoring. Provider specifics only in `deploy/<provider>/`.
 - CI: GitHub Actions at repo root, path-filtered to `Compliance/**` — backend on SQLite **and**

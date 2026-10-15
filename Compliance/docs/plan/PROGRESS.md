@@ -25,7 +25,9 @@ Checklist:
 ## Kit notes (2026-10-16, planning session)
 - Spec, kit and prototype generated; no product code yet. Seed content in `content/seed/` is
   pending SME review (43 items flagged `verify`); T06 imports it, T08/T09 verify it.
-- Open product questions are in docs/PRD.md §11. Answer them in session 1 (RUNBOOK §1).
+- Product decisions taken 2026-10-16 (PRD §11, ADR-019..022): name ANUPAL (changeable), states MH→GJ→AP→TN→OD,
+  pilots = small healthcare (clinics, nursing homes) + small manufacturer, OCI first, pricing deferred (likely per company).
+  Added tasks T33–T35 (additive).
 
 ---
 

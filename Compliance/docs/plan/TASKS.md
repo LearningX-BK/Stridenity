@@ -417,3 +417,36 @@ code-reviewer over each context (one slice per session), fix high/medium, backlo
 ### T32c · UI/accessibility pass & demo rehearsal — sonnet · deps: T32b
 qa-verifier across all pages both themes + mobile; DEMO_SCRIPT rehearsal; final summary in PROGRESS.md.
 **Skills** stridenity-ui, verification
+
+---
+
+## Phase E — Decisions of 2026-10-16 (additive; existing tasks unchanged)
+
+### T33 · Clinic & nursing-home pilot profile — sonnet · deps: T28
+**Goal** Make the healthcare pilot work for small clinics and nursing homes (ADR-022).
+**Deliverables** Verify healthcare + MH obligations for a 0-bed clinic (BMW for clinics, PC-PNDT,
+AERB dental/X-ray, drug licence, Shops & Establishments registration, fire applicability by
+building) and add missing ones with sources; "clinic" quick onboarding (≤ 12 questions);
+4th demo tenant *Shubham Family Clinic & Diagnostics* (PRD §7); demo script section for a clinic.
+**Acceptance** clinic profile register snapshot test; quick onboarding e2e ≤ 12 questions;
+compliance-auditor pass on clinic items; ui_check + qa-verifier on onboarding.
+**Skills** compliance-packs, compliance-domain, synthetic-data
+
+### T34 · OCI deployment target — sonnet · deps: T31
+**Goal** ADR-019: deploy on OCI first.
+**Deliverables** `deploy/oci/` — runbook for a pilot VM (Docker Compose, OCI Object Storage via
+S3-compatible API, OCI Vault for the master key, OCI Database with PostgreSQL), OKE manifests
+(api, worker, web, migrations job), backup/DR notes (Mumbai → Hyderabad), cost sheet assumptions
+marked as estimates; `docs/DEPLOY.md` OCI section.
+**Acceptance** manifests validate (`kubectl --dry-run=client` or kubeconform); compose file with OCI
+env vars starts locally against MinIO; runbook reviewed by code-reviewer.
+**Skills** tenancy, verification
+
+### T35 · Gujarat state pack — sonnet · deps: T09
+**Goal** Second state (ADR-020).
+**Deliverables** `content/packs/IN-GJ/gujarat/`: PT, LWF, Gujarat Shops & Establishments, fire
+(Gujarat Fire Prevention and Life Safety Measures Act), lifts, GPCB practice, state labour-code
+rules, 2026–2027 holidays; REVIEW.md; demo profile switch to a Gujarat unit.
+**Acceptance** validator passes; every obligation sourced; compliance-auditor pass; register snapshot
+for a Gujarat manufacturing unit.
+**Skills** compliance-packs, compliance-domain

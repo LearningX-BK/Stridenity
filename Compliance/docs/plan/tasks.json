@@ -359,6 +359,36 @@
       ],
       "status": "pending",
       "note": ""
+    },
+    {
+      "id": "T33",
+      "title": "Clinic & nursing-home pilot profile",
+      "model": "sonnet",
+      "deps": [
+        "T28"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T34",
+      "title": "OCI deployment target",
+      "model": "sonnet",
+      "deps": [
+        "T31"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T35",
+      "title": "Gujarat state pack",
+      "model": "sonnet",
+      "deps": [
+        "T09"
+      ],
+      "status": "pending",
+      "note": ""
     }
   ]
 }
