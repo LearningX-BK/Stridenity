@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
   Binds C:\GenAIGenerated\Stridenity\Compliance to the Compliance/ folder of
-  https://github.com/LearningX-BK/Stridenity.git (ADR-013) — run once per machine.
+  https://github.com/LearningX-BK/Stridenity.git (ADR-013) - run once per machine.
 
 .DESCRIPTION
   The GitHub repo is Stridenity's product monorepo; this product is its Compliance/ folder. Git
