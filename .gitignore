@@ -1,0 +1,4 @@
+# per-product ignores live in each product folder
+.DS_Store
+Thumbs.db
+.idea/

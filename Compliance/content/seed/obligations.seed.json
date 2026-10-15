@@ -1,0 +1,3469 @@
+{
+ "version": "0.1.0",
+ "generated_by": "content/seed/build_seed.py",
+ "status": "draft — every item pending SME review; verify=true items need a fact check",
+ "facts": {
+  "state": {
+   "label": "State",
+   "type": "enum",
+   "options": [
+    "MH",
+    "OD",
+    "GJ",
+    "KA",
+    "DL"
+   ]
+  },
+  "legal_form": {
+   "label": "Legal form",
+   "type": "enum",
+   "options": [
+    "pvt_ltd",
+    "public_ltd",
+    "llp",
+    "partnership",
+    "proprietorship"
+   ]
+  },
+  "sectors": {
+   "label": "Sectors",
+   "type": "set",
+   "options": [
+    "manufacturing",
+    "healthcare",
+    "construction",
+    "electrical"
+   ]
+  },
+  "employees": {
+   "label": "Directly employed workers",
+   "type": "int"
+  },
+  "contract_workers": {
+   "label": "Contract workers",
+   "type": "int"
+  },
+  "total_workers": {
+   "label": "Total workers (direct + contract)",
+   "type": "int",
+   "derived": true
+  },
+  "uses_power": {
+   "label": "Manufacturing process uses power",
+   "type": "bool"
+  },
+  "hazardous_process": {
+   "label": "Hazardous process (OSH Code schedule)",
+   "type": "bool"
+  },
+  "gst_registered": {
+   "label": "GST registered",
+   "type": "bool"
+  },
+  "gst_qrmp": {
+   "label": "GST QRMP scheme (quarterly returns)",
+   "type": "bool"
+  },
+  "turnover_cr": {
+   "label": "Annual turnover (₹ crore)",
+   "type": "number"
+  },
+  "pcb_category": {
+   "label": "Pollution category (Red/Orange/Green/White)",
+   "type": "enum",
+   "options": [
+    "red",
+    "orange",
+    "green",
+    "white"
+   ]
+  },
+  "hazardous_waste": {
+   "label": "Generates hazardous waste",
+   "type": "bool"
+  },
+  "plastic_packaging": {
+   "label": "Uses plastic packaging for products (PIBO)",
+   "type": "bool"
+  },
+  "ewaste_bulk": {
+   "label": "Bulk consumer of electrical & electronic equipment",
+   "type": "bool"
+  },
+  "dg_set_kva": {
+   "label": "DG set capacity (kVA)",
+   "type": "number"
+  },
+  "has_boiler": {
+   "label": "Steam boiler on premises",
+   "type": "bool"
+  },
+  "has_pressure_vessel": {
+   "label": "Air receivers / pressure vessels",
+   "type": "bool"
+  },
+  "has_lifting": {
+   "label": "Hoists, cranes, lifting tackles",
+   "type": "bool"
+  },
+  "has_lift": {
+   "label": "Passenger / goods lift",
+   "type": "bool"
+  },
+  "fire_noc_required": {
+   "label": "Premises needs Fire NOC (height ≥ 15 m, hospital, factory, assembly)",
+   "type": "bool"
+  },
+  "ht_installation": {
+   "label": "HT electrical installation (> 650 V)",
+   "type": "bool"
+  },
+  "electrical_contractor": {
+   "label": "Business holds an electrical contractor licence",
+   "type": "bool"
+  },
+  "weighing_instruments": {
+   "label": "Uses weighing/measuring instruments in trade",
+   "type": "bool"
+  },
+  "packaged_goods": {
+   "label": "Manufactures/packs pre-packaged commodities",
+   "type": "bool"
+  },
+  "beds": {
+   "label": "In-patient beds",
+   "type": "int"
+  },
+  "xray_units": {
+   "label": "X-ray / CT / C-arm units",
+   "type": "int"
+  },
+  "ultrasound_units": {
+   "label": "Ultrasound (USG) machines",
+   "type": "int"
+  },
+  "pharmacy": {
+   "label": "In-house pharmacy",
+   "type": "bool"
+  },
+  "ndps_stock": {
+   "label": "Stocks essential narcotic drugs (morphine etc.)",
+   "type": "bool"
+  },
+  "blood_centre": {
+   "label": "Blood centre / storage unit",
+   "type": "bool"
+  },
+  "construction_active": {
+   "label": "Running building/construction work",
+   "type": "bool"
+  },
+  "construction_workers": {
+   "label": "Construction workers on site (peak)",
+   "type": "int"
+  },
+  "rera_project": {
+   "label": "Registered RERA project",
+   "type": "bool"
+  },
+  "owes_mse_suppliers": {
+   "label": "Buys from Micro/Small enterprises",
+   "type": "bool"
+  }
+ },
+ "categories": {
+  "labour": "Labour",
+  "social_security": "Social security",
+  "tax": "Tax",
+  "corporate": "Corporate",
+  "environment": "Environment",
+  "fire_safety": "Fire & building",
+  "electrical": "Electrical",
+  "boiler_pv": "Boilers & pressure plant",
+  "metrology": "Legal metrology",
+  "healthcare": "Healthcare",
+  "construction": "Construction",
+  "posh": "POSH",
+  "data_protection": "Data protection"
+ },
+ "licence_types": {
+  "factory_licence": "Factory licence",
+  "cto": "Consent to Operate",
+  "lift_licence": "Lift licence",
+  "elec_inspection": "Electrical inspection",
+  "elec_contractor_licence": "Electrical contractor licence",
+  "boiler_cert": "Boiler certificate",
+  "lm_stamp": "Legal metrology stamping",
+  "nh_registration": "Nursing home registration",
+  "bmw_auth": "BMW authorisation",
+  "pndt_reg": "PC-PNDT registration",
+  "aerb_licence": "AERB licence",
+  "drug_licence": "Drug licence",
+  "blood_licence": "Blood centre licence"
+ },
+ "obligations": [
+  {
+   "id": "IN.SS.EPF.ECR",
+   "title": "EPF monthly ECR & contribution payment",
+   "category": "social_security",
+   "law": "Code on Social Security, 2020 (EPF scheme)",
+   "authority": "EPFO",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "15th of following month",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 15
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 20
+   },
+   "inputs": [
+    "Monthly payroll: gross, basic+DA, PF wages per employee",
+    "UAN list, joiners/leavers",
+    "Excluded allowances (50% wage rule check)"
+   ],
+   "evidence": [
+    "ECR file",
+    "TRRN challan",
+    "Bank payment confirmation"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "pf_working"
+   ],
+   "source_url": "https://www.epfindia.gov.in",
+   "verify": false,
+   "penalty": "Interest + damages on delayed remittance; prosecution for deducted-but-not-paid",
+   "audit_point": "Recompute 2 months of PF on wages per Code on Wages 2(y) 50% rule; tie TRRN to bank",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.SS.ESI.MC",
+   "title": "ESI monthly contribution",
+   "category": "social_security",
+   "law": "Code on Social Security, 2020 (ESI)",
+   "authority": "ESIC",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "15th of following month",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 15
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "Payroll: gross wages per employee",
+    "Eligible employees (wages ≤ ESI ceiling)",
+    "Days paid"
+   ],
+   "evidence": [
+    "ESI challan",
+    "Monthly contribution statement"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "esi_working"
+   ],
+   "source_url": "https://www.esic.gov.in",
+   "verify": false,
+   "penalty": "Interest + damages; loss of benefits to employees",
+   "audit_point": "Check all employees ≤ wage ceiling are covered; joiners registered within 10 days",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.SS.JOIN",
+   "title": "Register new joiners (UAN / ESI IP) and issue appointment letter",
+   "category": "labour",
+   "law": "OSH Code 2020 s.6(1)(f); Code on Social Security",
+   "authority": "EPFO / ESIC",
+   "jurisdiction": "IN",
+   "frequency": "event",
+   "due": "Within 10 days of joining (ESI); appointment letter at joining",
+   "due_rule": {
+    "type": "event_within",
+    "event": "employee_joined",
+    "days": 10
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "Joiner details (KYC, Aadhaar-linked)",
+    "Designation, wages, terms"
+   ],
+   "evidence": [
+    "Appointment letter (signed copy)",
+    "UAN / ESI IP number"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "fast",
+   "ai_templates": [
+    "appointment_letter"
+   ],
+   "source_url": "https://labour.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.WAGE.PAY",
+   "title": "Pay monthly wages by the statutory date",
+   "category": "labour",
+   "law": "Code on Wages, 2019 s.17",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "7th of following month (monthly wage period)",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 7
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 1
+   },
+   "inputs": [
+    "Payroll register",
+    "Bank transfer file"
+   ],
+   "evidence": [
+    "Bank statement / payment advice",
+    "Wage slips"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://labour.gov.in",
+   "verify": false,
+   "penalty": "Fine up to ₹50,000 (first offence), higher for repeat",
+   "audit_point": "Sample 3 months: payment date ≤ 7th; wage slips issued",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.WAGE.FNF",
+   "title": "Full & final settlement within 2 working days of exit",
+   "category": "labour",
+   "law": "Code on Wages, 2019 s.17(2)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "event",
+   "due": "2 working days from removal / dismissal / resignation",
+   "due_rule": {
+    "type": "event_within",
+    "event": "employee_exited",
+    "days": 2,
+    "working_days": true
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 1
+   },
+   "inputs": [
+    "Exit date, dues computation"
+   ],
+   "evidence": [
+    "F&F statement, bank advice"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "fast",
+   "ai_templates": [],
+   "source_url": "https://labour.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.WAGE.MINREV",
+   "title": "Minimum wage / VDA revision check",
+   "category": "labour",
+   "law": "Code on Wages, 2019; state minimum wage notifications",
+   "authority": "State Labour Dept",
+   "jurisdiction": "IN",
+   "frequency": "half_yearly",
+   "due": "On each VDA revision (MH: Jan & Jul)",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "01-15",
+     "07-15"
+    ]
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 1
+   },
+   "inputs": [
+    "Current wage master by skill category",
+    "Latest notification"
+   ],
+   "evidence": [
+    "Revision working",
+    "Approved wage master"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "min_wage_gap"
+   ],
+   "source_url": "https://labour.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.WAGE.BONUS",
+   "title": "Statutory bonus payment",
+   "category": "labour",
+   "law": "Code on Wages, 2019 (bonus)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Within 8 months of close of accounting year (30 Nov)",
+   "due_rule": {
+    "type": "annual",
+    "month": 11,
+    "day": 30
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 20
+   },
+   "inputs": [
+    "Allocable surplus working",
+    "Eligible employees & wages"
+   ],
+   "evidence": [
+    "Bonus register",
+    "Payment proof"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [
+    "bonus_working"
+   ],
+   "source_url": "https://labour.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.LAB.REG",
+   "title": "Maintain registers (employees, wages, attendance, OT, deductions)",
+   "category": "labour",
+   "law": "Labour codes + central/state rules (electronic registers)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Updated each wage period",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 1
+   },
+   "inputs": [
+    "HRMS / attendance export"
+   ],
+   "evidence": [
+    "Register extracts (monthly)"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "register_from_payroll"
+   ],
+   "source_url": "https://labour.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "Inspect registers for 2 sampled months; cross-check with payroll",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.LAB.ANNRET",
+   "title": "Annual return under labour codes",
+   "category": "labour",
+   "law": "Labour codes — central/state rules (single electronic return)",
+   "authority": "Shram Suvidha / state portal",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "As notified in rules (verify date)",
+   "due_rule": {
+    "type": "annual",
+    "month": 2,
+    "day": 1
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "Annual headcount, wages, leave, accidents, bonus data"
+   ],
+   "evidence": [
+    "Return acknowledgement"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "annual_return_worksheet"
+   ],
+   "source_url": "https://shramsuvidha.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.OSH.EREG",
+   "title": "Registration of establishment (OSH Code)",
+   "category": "labour",
+   "law": "OSH Code, 2020 s.3",
+   "authority": "Registering Officer",
+   "jurisdiction": "IN",
+   "frequency": "one_time",
+   "due": "Before / on applicability; update changes within prescribed time",
+   "due_rule": {
+    "type": "one_time"
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "total_workers",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "Establishment details, employer, nature of work, headcount incl. contract"
+   ],
+   "evidence": [
+    "Registration certificate"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://labour.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.OSH.FACLIC",
+   "title": "Factory licence (OSH Code) — renewal",
+   "category": "labour",
+   "law": "OSH Code, 2020 (factory licence) + state rules",
+   "authority": "Chief Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Before expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "factory_licence",
+    "days": 60
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "manufacturing"
+     },
+     {
+      "any": [
+       {
+        "all": [
+         {
+          "fact": "uses_power",
+          "op": "eq",
+          "value": true
+         },
+         {
+          "fact": "total_workers",
+          "op": "gte",
+          "value": 20
+         }
+        ]
+       },
+       {
+        "fact": "total_workers",
+        "op": "gte",
+        "value": 40
+       }
+      ]
+     }
+    ]
+   },
+   "inputs": [
+    "Licence details, max workers, power (HP/kW), plans if changed"
+   ],
+   "evidence": [
+    "Licence copy",
+    "Renewal acknowledgement"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://labour.gov.in",
+   "verify": true,
+   "penalty": "Running an unlicensed factory — penalty and prosecution",
+   "audit_point": "Actual headcount and power vs licensed limits",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.OSH.HEALTH",
+   "title": "Annual free health check-up (employees above prescribed age)",
+   "category": "labour",
+   "law": "OSH Code, 2020 s.6(1)(c)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Once a year",
+   "due_rule": {
+    "type": "annual",
+    "month": 3,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "total_workers",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "List of employees above prescribed age",
+    "Empanelled clinic"
+   ],
+   "evidence": [
+    "Health check records / certificates"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.OSH.SAFEOFF",
+   "title": "Safety officer appointment",
+   "category": "labour",
+   "law": "OSH Code, 2020 + state rules",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Maintain at all times",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "H",
+   "applies": {
+    "any": [
+     {
+      "all": [
+       {
+        "fact": "sectors",
+        "op": "contains",
+        "value": "manufacturing"
+       },
+       {
+        "fact": "total_workers",
+        "op": "gte",
+        "value": 500
+       }
+      ]
+     },
+     {
+      "all": [
+       {
+        "fact": "sectors",
+        "op": "contains",
+        "value": "construction"
+       },
+       {
+        "fact": "construction_workers",
+        "op": "gte",
+        "value": 250
+       }
+      ]
+     },
+     {
+      "fact": "hazardous_process",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Appointed officer, qualification"
+   ],
+   "evidence": [
+    "Appointment letter, qualification proof"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.SS.CRECHE",
+   "title": "Crèche facility",
+   "category": "labour",
+   "law": "Code on Social Security, 2020 (maternity benefit)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Maintain at all times",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 50
+   },
+   "inputs": [
+    "Crèche arrangement (own/shared)"
+   ],
+   "evidence": [
+    "Agreement / photos / register"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.CLB.PE",
+   "title": "Principal employer: verify contractors' licence, wages, PF & ESI monthly",
+   "category": "labour",
+   "law": "OSH Code, 2020 Ch. XI (contract labour); Code on Wages (principal employer liability)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "Before releasing contractor bill (monthly)",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 20
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "contract_workers",
+    "op": "gt",
+    "value": 0
+   },
+   "inputs": [
+    "Contractor wage sheet",
+    "Contractor PF ECR + challan",
+    "ESI challan",
+    "Gate attendance"
+   ],
+   "evidence": [
+    "Reconciliation sheet",
+    "Contractor challans"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "contractor_recon"
+   ],
+   "source_url": "https://labour.gov.in",
+   "verify": true,
+   "penalty": "Principal employer liable for unpaid wages/contributions of contract workers",
+   "audit_point": "Gate attendance vs ECR member count, 2 contractors × 2 months",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.SS.GRAT",
+   "title": "Gratuity payment within 30 days & nominations",
+   "category": "social_security",
+   "law": "Code on Social Security, 2020 (gratuity)",
+   "authority": "Controlling Authority",
+   "jurisdiction": "IN",
+   "frequency": "event",
+   "due": "Within 30 days of becoming payable",
+   "due_rule": {
+    "type": "event_within",
+    "event": "employee_exited",
+    "days": 30
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "Service period, last wages",
+    "Nomination form"
+   ],
+   "evidence": [
+    "Payment proof"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "fast",
+   "ai_templates": [],
+   "source_url": "https://labour.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.POSH.IC",
+   "title": "POSH: Internal Committee constituted & policy displayed",
+   "category": "posh",
+   "law": "POSH Act, 2013 s.4",
+   "authority": "District Officer",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Maintain; reconstitute on change",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "IC members incl. external member",
+    "Policy"
+   ],
+   "evidence": [
+    "IC constitution order",
+    "Policy & notice"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "posh_policy",
+    "posh_notice"
+   ],
+   "source_url": "https://wcd.nic.in",
+   "verify": false,
+   "penalty": "Fine up to ₹50,000; licence cancellation on repeat",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.POSH.AR",
+   "title": "POSH annual report (IC → employer → District Officer)",
+   "category": "posh",
+   "law": "POSH Act, 2013 s.21; POSH Rules r.14",
+   "authority": "District Officer",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Calendar year report — typically by 31 Jan (state practice)",
+   "due_rule": {
+    "type": "annual",
+    "month": 1,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 10
+   },
+   "inputs": [
+    "Complaints received/disposed, workshops held"
+   ],
+   "evidence": [
+    "Annual report",
+    "Submission proof"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "posh_annual_report"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.IR.GRC",
+   "title": "Grievance Redressal Committee",
+   "category": "labour",
+   "law": "Industrial Relations Code, 2020 s.4",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Maintain",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 20
+   },
+   "inputs": [
+    "Members (equal employer/worker)"
+   ],
+   "evidence": [
+    "Constitution note"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.IR.SO",
+   "title": "Standing orders",
+   "category": "labour",
+   "law": "Industrial Relations Code, 2020",
+   "authority": "Certifying Officer",
+   "jurisdiction": "IN",
+   "frequency": "one_time",
+   "due": "On applicability",
+   "due_rule": {
+    "type": "one_time"
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 300
+   },
+   "inputs": [
+    "Model standing orders adoption"
+   ],
+   "evidence": [
+    "Certified / adopted standing orders"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.LAB.DISPLAY",
+   "title": "Statutory notices & abstracts displayed (bilingual)",
+   "category": "labour",
+   "law": "Labour codes + rules (wages, hours, holidays, safety, POSH)",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Maintain; update on revision",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "employees",
+    "op": "gte",
+    "value": 1
+   },
+   "inputs": [
+    "Current wage rates, shift timings, holiday list, IC details"
+   ],
+   "evidence": [
+    "Photo of notice board (dated)"
+   ],
+   "owner_role": "site_user",
+   "workflow": "fast",
+   "ai_templates": [
+    "display_notices_bilingual"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.LWF",
+   "title": "Maharashtra Labour Welfare Fund contribution",
+   "category": "labour",
+   "law": "Maharashtra Labour Welfare Fund Act, 1953",
+   "authority": "MLWB",
+   "jurisdiction": "IN-MH",
+   "frequency": "half_yearly",
+   "due": "June & December contributions by 15 Jul / 15 Jan",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "07-15",
+     "01-15"
+    ]
+   },
+   "risk": "L",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "employees",
+      "op": "gte",
+      "value": 5
+     }
+    ]
+   },
+   "inputs": [
+    "Employees on roll on 30 Jun / 31 Dec"
+   ],
+   "evidence": [
+    "Challan",
+    "Return"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://public.mlwb.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.PT.PTRC",
+   "title": "Professional Tax (PTRC) — deduct, pay & return",
+   "category": "tax",
+   "law": "Maharashtra State Tax on Professions, Trades, Callings and Employments Act, 1975",
+   "authority": "Maharashtra GST Dept",
+   "jurisdiction": "IN-MH",
+   "frequency": "monthly",
+   "due": "Last day of month (monthly if previous-year liability ≥ ₹50,000; else annual by 31 Mar)",
+   "due_rule": {
+    "type": "month_end"
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "employees",
+      "op": "gte",
+      "value": 1
+     }
+    ]
+   },
+   "inputs": [
+    "Salary slabs per employee"
+   ],
+   "evidence": [
+    "PTRC challan & return"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://mahagst.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.PT.PTEC",
+   "title": "Professional Tax (PTEC) — enterprise's own tax",
+   "category": "tax",
+   "law": "Maharashtra Profession Tax Act, 1975",
+   "authority": "Maharashtra GST Dept",
+   "jurisdiction": "IN-MH",
+   "frequency": "annual",
+   "due": "30 June",
+   "due_rule": {
+    "type": "annual",
+    "month": 6,
+    "day": 30
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "state",
+    "op": "eq",
+    "value": "MH"
+   },
+   "inputs": [
+    "PTEC number"
+   ],
+   "evidence": [
+    "Challan"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://mahagst.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.SE.REG",
+   "title": "Shops & Establishments registration / intimation",
+   "category": "labour",
+   "law": "Maharashtra Shops and Establishments (Regulation of Employment and Conditions of Service) Act, 2017",
+   "authority": "Facilitator (Labour Dept)",
+   "jurisdiction": "IN-MH",
+   "frequency": "one_time",
+   "due": "Registration (≥10 workers) or intimation (<10); changes within prescribed time",
+   "due_rule": {
+    "type": "one_time"
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "sectors",
+      "op": "not_contains",
+      "value": "manufacturing"
+     }
+    ]
+   },
+   "inputs": [
+    "Establishment details, headcount"
+   ],
+   "evidence": [
+    "Registration certificate / intimation receipt"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://mahakamgar.maharashtra.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.TDS.DEP",
+   "title": "TDS deposit",
+   "category": "tax",
+   "law": "Income-tax Act, 2025 (from 1-Apr-2026)",
+   "authority": "Income Tax Dept",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "7th of following month (March deductions: 30 April)",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 7,
+    "exceptions": {
+     "04": "04-30"
+    }
+   },
+   "risk": "H",
+   "applies": {
+    "all": []
+   },
+   "inputs": [
+    "TDS deducted by section (salary, contractors, rent, professional)"
+   ],
+   "evidence": [
+    "Challan (CIN)"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.incometax.gov.in",
+   "verify": false,
+   "penalty": "Interest per month of delay; disallowance of expense",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.TDS.RET",
+   "title": "Quarterly TDS statements",
+   "category": "tax",
+   "law": "Income-tax Act, 2025 — new form numbers under Income-tax Rules, 2026",
+   "authority": "Income Tax Dept / TRACES",
+   "jurisdiction": "IN",
+   "frequency": "quarterly",
+   "due": "31 Jul · 31 Oct · 31 Jan · 31 May",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "07-31",
+     "10-31",
+     "01-31",
+     "05-31"
+    ]
+   },
+   "risk": "H",
+   "applies": {
+    "all": []
+   },
+   "inputs": [
+    "Deductee-wise TDS data",
+    "Challans"
+   ],
+   "evidence": [
+    "Statement acknowledgement (token)"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.incometax.gov.in",
+   "verify": true,
+   "penalty": "Late fee per day + penalty for non-filing",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.GST.R1",
+   "title": "GSTR-1 (monthly)",
+   "category": "tax",
+   "law": "CGST Act, 2017",
+   "authority": "GSTN",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "11th",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 11
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "gst_registered",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "gst_qrmp",
+      "op": "eq",
+      "value": false
+     }
+    ]
+   },
+   "inputs": [
+    "Sales register / e-invoices"
+   ],
+   "evidence": [
+    "GSTR-1 ARN"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [
+    "gst_recon"
+   ],
+   "source_url": "https://www.gst.gov.in",
+   "verify": false,
+   "penalty": "Late fee per day; blocks e-way bill / ITC for buyers",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.GST.3B",
+   "title": "GSTR-3B (monthly) & tax payment",
+   "category": "tax",
+   "law": "CGST Act, 2017",
+   "authority": "GSTN",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "20th",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 20
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "gst_registered",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "gst_qrmp",
+      "op": "eq",
+      "value": false
+     }
+    ]
+   },
+   "inputs": [
+    "Output tax, ITC per GSTR-2B reconciliation"
+   ],
+   "evidence": [
+    "GSTR-3B ARN",
+    "Payment challan"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "high_risk",
+   "ai_templates": [
+    "gst_recon"
+   ],
+   "source_url": "https://www.gst.gov.in",
+   "verify": false,
+   "penalty": "Interest 18% p.a. + late fee",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.GST.QRMP",
+   "title": "GST QRMP: PMT-06 monthly, GSTR-1 & 3B quarterly",
+   "category": "tax",
+   "law": "CGST Act, 2017",
+   "authority": "GSTN",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "PMT-06 by 25th; GSTR-1 by 13th and 3B by 22nd/24th after quarter",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 25
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "gst_registered",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "gst_qrmp",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Sales & ITC data"
+   ],
+   "evidence": [
+    "Challans, ARNs"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.gst.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.GST.9",
+   "title": "GSTR-9 annual return",
+   "category": "tax",
+   "law": "CGST Act, 2017 s.44",
+   "authority": "GSTN",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "31 December",
+   "due_rule": {
+    "type": "annual",
+    "month": 12,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "gst_registered",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "turnover_cr",
+      "op": "gt",
+      "value": 2
+     }
+    ]
+   },
+   "inputs": [
+    "Annual books vs returns recon"
+   ],
+   "evidence": [
+    "GSTR-9 ARN"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.gst.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.IT.ADV",
+   "title": "Advance tax instalments",
+   "category": "tax",
+   "law": "Income-tax Act, 2025",
+   "authority": "Income Tax Dept",
+   "jurisdiction": "IN",
+   "frequency": "quarterly",
+   "due": "15 Jun · 15 Sep · 15 Dec · 15 Mar",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "06-15",
+     "09-15",
+     "12-15",
+     "03-15"
+    ]
+   },
+   "risk": "M",
+   "applies": {
+    "all": []
+   },
+   "inputs": [
+    "Estimated income"
+   ],
+   "evidence": [
+    "Challan"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.incometax.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.IT.ITR",
+   "title": "Income-tax return & tax audit report",
+   "category": "tax",
+   "law": "Income-tax Act, 2025",
+   "authority": "Income Tax Dept",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Audit report 30 Sep; return 31 Oct (audit cases)",
+   "due_rule": {
+    "type": "annual",
+    "month": 10,
+    "day": 31
+   },
+   "risk": "H",
+   "applies": {
+    "all": []
+   },
+   "inputs": [
+    "Audited financials"
+   ],
+   "evidence": [
+    "ITR acknowledgement",
+    "Audit report acknowledgement"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://www.incometax.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MCA.AGM",
+   "title": "Annual General Meeting",
+   "category": "corporate",
+   "law": "Companies Act, 2013 s.96",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Within 6 months of FY end (30 Sep)",
+   "due_rule": {
+    "type": "annual",
+    "month": 9,
+    "day": 30
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "legal_form",
+    "op": "in",
+    "value": [
+     "pvt_ltd",
+     "public_ltd"
+    ]
+   },
+   "inputs": [
+    "Audited accounts, notice, board report"
+   ],
+   "evidence": [
+    "Notice, minutes"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [
+    "board_report_draft"
+   ],
+   "source_url": "https://www.mca.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MCA.AOC4",
+   "title": "AOC-4 financial statements filing",
+   "category": "corporate",
+   "law": "Companies Act, 2013 s.137",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Within 30 days of AGM",
+   "due_rule": {
+    "type": "annual",
+    "month": 10,
+    "day": 30
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "legal_form",
+    "op": "in",
+    "value": [
+     "pvt_ltd",
+     "public_ltd"
+    ]
+   },
+   "inputs": [
+    "Audited financials, AGM date"
+   ],
+   "evidence": [
+    "SRN / challan"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.mca.gov.in",
+   "verify": false,
+   "penalty": "Additional fee ₹100/day",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MCA.MGT7",
+   "title": "MGT-7 / MGT-7A annual return",
+   "category": "corporate",
+   "law": "Companies Act, 2013 s.92",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Within 60 days of AGM",
+   "due_rule": {
+    "type": "annual",
+    "month": 11,
+    "day": 29
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "legal_form",
+    "op": "in",
+    "value": [
+     "pvt_ltd",
+     "public_ltd"
+    ]
+   },
+   "inputs": [
+    "Shareholding, directors, meetings"
+   ],
+   "evidence": [
+    "SRN / challan"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.mca.gov.in",
+   "verify": false,
+   "penalty": "Additional fee ₹100/day",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MCA.DPT3",
+   "title": "DPT-3 return of deposits",
+   "category": "corporate",
+   "law": "Companies (Acceptance of Deposits) Rules",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "30 June",
+   "due_rule": {
+    "type": "annual",
+    "month": 6,
+    "day": 30
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "legal_form",
+    "op": "in",
+    "value": [
+     "pvt_ltd",
+     "public_ltd"
+    ]
+   },
+   "inputs": [
+    "Loans/advances outstanding as on 31 Mar"
+   ],
+   "evidence": [
+    "SRN"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.mca.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MCA.MSME1",
+   "title": "MSME-1 half-yearly return (dues to MSEs > 45 days)",
+   "category": "corporate",
+   "law": "Companies Act s.405 order",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "half_yearly",
+   "due": "30 Apr · 31 Oct",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "04-30",
+     "10-31"
+    ]
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "legal_form",
+      "op": "in",
+      "value": [
+       "pvt_ltd",
+       "public_ltd"
+      ]
+     },
+     {
+      "fact": "owes_mse_suppliers",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Ageing of MSE payables"
+   ],
+   "evidence": [
+    "SRN"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.mca.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MCA.KYC",
+   "title": "Director KYC (DIR-3 KYC)",
+   "category": "corporate",
+   "law": "Companies (Appointment of Directors) Rules",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "30 Sep (check current periodicity)",
+   "due_rule": {
+    "type": "annual",
+    "month": 9,
+    "day": 30
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "legal_form",
+    "op": "in",
+    "value": [
+     "pvt_ltd",
+     "public_ltd",
+     "llp"
+    ]
+   },
+   "inputs": [
+    "Director KYC"
+   ],
+   "evidence": [
+    "SRN"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.mca.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.LLP.8_11",
+   "title": "LLP Form 11 (30 May) & Form 8 (30 Oct)",
+   "category": "corporate",
+   "law": "LLP Act, 2008",
+   "authority": "ROC",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Form 11 by 30 May; Form 8 by 30 Oct",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "05-30",
+     "10-30"
+    ]
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "legal_form",
+    "op": "eq",
+    "value": "llp"
+   },
+   "inputs": [
+    "Partners, contribution, accounts"
+   ],
+   "evidence": [
+    "SRN"
+   ],
+   "owner_role": "maker:cs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://www.mca.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.MSMED.45",
+   "title": "Pay Micro/Small suppliers within 45 days",
+   "category": "tax",
+   "law": "MSMED Act, 2006 s.15; Income-tax disallowance for delayed MSE payments",
+   "authority": "—",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "Monthly ageing review",
+   "due_rule": {
+    "type": "month_end"
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "owes_mse_suppliers",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Payables ageing with supplier Udyam status"
+   ],
+   "evidence": [
+    "Ageing report reviewed"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [
+    "mse_ageing_note"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.CTO",
+   "title": "Consent to Operate (Water & Air Acts) — renewal",
+   "category": "environment",
+   "law": "Water Act 1974 s.25; Air Act 1981 s.21",
+   "authority": "State PCB (MPCB in MH)",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Apply well before expiry (lead time 120 days)",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "cto",
+    "days": 120
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "pcb_category",
+    "op": "in",
+    "value": [
+     "red",
+     "orange",
+     "green"
+    ]
+   },
+   "inputs": [
+    "Production/capacity, water consumption, effluent & emission data",
+    "Compliance with existing conditions"
+   ],
+   "evidence": [
+    "CTO copy",
+    "Renewal application"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "high_risk",
+   "ai_templates": [
+    "cto_conditions"
+   ],
+   "source_url": "https://mpcb.gov.in",
+   "verify": false,
+   "penalty": "Closure directions; prosecution",
+   "audit_point": "Walk CTO conditions one by one with evidence",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.FORMV",
+   "title": "Environmental Statement (Form V)",
+   "category": "environment",
+   "law": "Environment (Protection) Rules, 1986 r.14",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "30 September",
+   "due_rule": {
+    "type": "annual",
+    "month": 9,
+    "day": 30
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "pcb_category",
+    "op": "in",
+    "value": [
+     "red",
+     "orange",
+     "green"
+    ]
+   },
+   "inputs": [
+    "Water, raw-material, waste and emission data for the FY"
+   ],
+   "evidence": [
+    "Form V acknowledgement"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [
+    "form_v_draft"
+   ],
+   "source_url": "https://mpcb.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.MON",
+   "title": "Stack / effluent / ambient monitoring by recognised lab",
+   "category": "environment",
+   "law": "CTO conditions",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "As per CTO (typically monthly/quarterly)",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 28
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "manufacturing"
+     },
+     {
+      "fact": "pcb_category",
+      "op": "in",
+      "value": [
+       "red",
+       "orange"
+      ]
+     }
+    ]
+   },
+   "inputs": [
+    "Lab reports"
+   ],
+   "evidence": [
+    "NABL/MoEF lab report"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.HW",
+   "title": "Hazardous waste: authorisation, 90-day storage, manifests, annual return (Form 4)",
+   "category": "environment",
+   "law": "Hazardous and Other Wastes (M&TM) Rules, 2016",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Annual return by 30 June; manifest per consignment",
+   "due_rule": {
+    "type": "annual",
+    "month": 6,
+    "day": 30
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "hazardous_waste",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Waste generated/stored/disposed by category",
+    "Manifests"
+   ],
+   "evidence": [
+    "Form 4 acknowledgement",
+    "TSDF manifests",
+    "Authorisation"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [
+    "hw_form4"
+   ],
+   "source_url": "https://mpcb.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.EPR",
+   "title": "Plastic packaging EPR (PIBO): registration & annual return",
+   "category": "environment",
+   "law": "Plastic Waste Management Rules, 2016 (as amended)",
+   "authority": "CPCB",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "30 June (verify)",
+   "due_rule": {
+    "type": "annual",
+    "month": 6,
+    "day": 30
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "plastic_packaging",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Plastic packaging introduced by category"
+   ],
+   "evidence": [
+    "EPR portal return"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://eprplastic.cpcb.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.EWASTE",
+   "title": "E-waste: channelise to registered recyclers; keep records",
+   "category": "environment",
+   "law": "E-Waste (Management) Rules, 2022",
+   "authority": "CPCB / State PCB",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Records; return if required (verify)",
+   "due_rule": {
+    "type": "annual",
+    "month": 6,
+    "day": 30
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "ewaste_bulk",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "E-waste disposed, recycler details"
+   ],
+   "evidence": [
+    "Recycler receipts"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ENV.DG",
+   "title": "DG set emission & noise compliance",
+   "category": "environment",
+   "law": "Environment (Protection) Rules — DG set norms; CTO",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "quarterly",
+   "due": "Quarterly monitoring (verify against CTO)",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "03-31",
+     "06-30",
+     "09-30",
+     "12-31"
+    ]
+   },
+   "risk": "L",
+   "applies": {
+    "fact": "dg_set_kva",
+    "op": "gt",
+    "value": 0
+   },
+   "inputs": [
+    "Running hours, stack test"
+   ],
+   "evidence": [
+    "Monitoring report"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.FIRE.FORMB",
+   "title": "Fire: Form B (half-yearly certificate by licensed agency)",
+   "category": "fire_safety",
+   "law": "Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+   "authority": "Maharashtra Fire Services",
+   "jurisdiction": "IN-MH",
+   "frequency": "half_yearly",
+   "due": "January and July",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "01-31",
+     "07-31"
+    ]
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "fire_noc_required",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Agency inspection report",
+    "Fire system maintenance log"
+   ],
+   "evidence": [
+    "Form B submitted",
+    "Agency licence copy"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://mahafireservice.gov.in",
+   "verify": false,
+   "penalty": "Sealing of premises; prosecution",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.FIRE.DRILL",
+   "title": "Fire & evacuation drills; fire-fighting training",
+   "category": "fire_safety",
+   "law": "National Building Code 2016 Part 4; state fire rules",
+   "authority": "Fire Services",
+   "jurisdiction": "IN",
+   "frequency": "half_yearly",
+   "due": "Twice a year",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "03-31",
+     "09-30"
+    ]
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "fire_noc_required",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Drill plan, participants"
+   ],
+   "evidence": [
+    "Drill report, attendance, photos"
+   ],
+   "owner_role": "site_user",
+   "workflow": "fast",
+   "ai_templates": [
+    "drill_report"
+   ],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.LIFT",
+   "title": "Lift licence / periodic inspection",
+   "category": "fire_safety",
+   "law": "Maharashtra Lifts, Escalators and Moving Walks Act, 2017",
+   "authority": "Lift Inspector (PWD/Energy Dept)",
+   "jurisdiction": "IN-MH",
+   "frequency": "annual",
+   "due": "Annual (verify)",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "lift_licence",
+    "days": 45
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "has_lift",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "AMC report"
+   ],
+   "evidence": [
+    "Licence / inspection certificate"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ELEC.INSP",
+   "title": "Electrical installation: periodic inspection / self-certification",
+   "category": "electrical",
+   "law": "CEA (Measures relating to Safety and Electric Supply) Regulations, 2023",
+   "authority": "Electrical Inspector",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Periodic (as notified; ≤ 5 years)",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "elec_inspection",
+    "days": 60
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "ht_installation",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Single-line diagram, test reports"
+   ],
+   "evidence": [
+    "Inspection / self-certification report"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://cea.nic.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ELEC.EARTH",
+   "title": "Earthing, IR & protection tests with records",
+   "category": "electrical",
+   "law": "CEA Safety Regulations, 2023",
+   "authority": "Electrical Inspector",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Annual",
+   "due_rule": {
+    "type": "annual",
+    "month": 4,
+    "day": 30
+   },
+   "risk": "M",
+   "applies": {
+    "any": [
+     {
+      "fact": "uses_power",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "ht_installation",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "electrical"
+     }
+    ]
+   },
+   "inputs": [
+    "Test readings by licensed electrical contractor"
+   ],
+   "evidence": [
+    "Test certificate"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ELEC.ACC",
+   "title": "Report electrical accident to Electrical Inspector",
+   "category": "electrical",
+   "law": "Electricity Act 2003 s.161; CEA regulations",
+   "authority": "Electrical Inspector",
+   "jurisdiction": "IN",
+   "frequency": "event",
+   "due": "Within 24 hours (verify form)",
+   "due_rule": {
+    "type": "event_within",
+    "event": "electrical_accident",
+    "days": 1
+   },
+   "risk": "H",
+   "applies": {
+    "any": [
+     {
+      "fact": "uses_power",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "ht_installation",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "electrical"
+     }
+    ]
+   },
+   "inputs": [
+    "Incident details"
+   ],
+   "evidence": [
+    "Intimation copy"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "event",
+   "ai_templates": [
+    "incident_intimation"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.ELEC.CONLIC",
+   "title": "Electrical contractor licence renewal",
+   "category": "electrical",
+   "law": "Maharashtra electrical licensing regulations (Licensing Board)",
+   "authority": "Electrical Licensing Board",
+   "jurisdiction": "IN-MH",
+   "frequency": "renewal",
+   "due": "Before expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "elec_contractor_licence",
+    "days": 60
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "electrical_contractor",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Supervisor & wireman certificates"
+   ],
+   "evidence": [
+    "Renewed licence"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.ELEC.COMP",
+   "title": "Supervisor / wireman competency certificates valid on every job",
+   "category": "electrical",
+   "law": "CEA Safety Regulations, 2023",
+   "authority": "Electrical Inspector",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "Monthly check",
+   "due_rule": {
+    "type": "month_end"
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "electrical_contractor",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Deployment roster, certificate validity"
+   ],
+   "evidence": [
+    "Roster with certificate numbers"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.BOILER",
+   "title": "Boiler certificate renewal (annual inspection)",
+   "category": "boiler_pv",
+   "law": "Boilers Act, 2025 (in force 1-May-2025)",
+   "authority": "Chief Inspector of Boilers",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Before certificate expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "boiler_cert",
+    "days": 45
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "has_boiler",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Boiler log, water treatment log",
+    "Attendant competency"
+   ],
+   "evidence": [
+    "Certificate to operate"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://dpiit.gov.in",
+   "verify": true,
+   "penalty": "Operating without valid certificate — penalty/prosecution",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.PV.TEST",
+   "title": "Pressure vessels / air receivers — periodic examination",
+   "category": "boiler_pv",
+   "law": "OSH Code state rules; SMPV(U) Rules 2016 where applicable",
+   "authority": "Competent person / PESO",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Per rules (verify periodicity)",
+   "due_rule": {
+    "type": "annual",
+    "month": 8,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "has_pressure_vessel",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Equipment list, last test date"
+   ],
+   "evidence": [
+    "Competent person certificate"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.LIFTING",
+   "title": "Lifting machines & tackles — examination by competent person",
+   "category": "boiler_pv",
+   "law": "OSH Code state rules",
+   "authority": "Competent person",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Every 12 months (verify)",
+   "due_rule": {
+    "type": "annual",
+    "month": 8,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "has_lifting",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Register of lifting equipment"
+   ],
+   "evidence": [
+    "Examination certificate"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.LM.VERIFY",
+   "title": "Weighing & measuring instruments — verification & stamping",
+   "category": "metrology",
+   "law": "Legal Metrology Act 2009; state enforcement rules",
+   "authority": "Legal Metrology Dept",
+   "jurisdiction": "IN-MH",
+   "frequency": "annual",
+   "due": "Every 12 months (most instruments)",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "lm_stamp",
+    "days": 30
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "weighing_instruments",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Instrument list"
+   ],
+   "evidence": [
+    "Verification certificate"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.LM.PKG",
+   "title": "Packaged commodities: registration & label declarations",
+   "category": "metrology",
+   "law": "Legal Metrology (Packaged Commodities) Rules, 2011",
+   "authority": "Legal Metrology Dept",
+   "jurisdiction": "IN",
+   "frequency": "one_time",
+   "due": "Before packing/selling",
+   "due_rule": {
+    "type": "one_time"
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "packaged_goods",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "SKU labels"
+   ],
+   "evidence": [
+    "Registration certificate",
+    "Label review"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "standard",
+   "ai_templates": [
+    "label_check"
+   ],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.HC.NHREG",
+   "title": "Nursing home registration — renewal",
+   "category": "healthcare",
+   "law": "Maharashtra Nursing Homes Registration Act, 1949 (as amended) & rules",
+   "authority": "Local supervising authority",
+   "jurisdiction": "IN-MH",
+   "frequency": "renewal",
+   "due": "Before expiry (verify validity)",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "nh_registration",
+    "days": 90
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "healthcare"
+     },
+     {
+      "fact": "beds",
+      "op": "gt",
+      "value": 0
+     }
+    ]
+   },
+   "inputs": [
+    "Beds, staff, facilities"
+   ],
+   "evidence": [
+    "Registration certificate"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.HC.RATES",
+   "title": "Display of rates & patient rights charter",
+   "category": "healthcare",
+   "law": "Maharashtra Nursing Homes rules (as amended) / Clinical Establishments standards",
+   "authority": "Supervising authority",
+   "jurisdiction": "IN-MH",
+   "frequency": "continuous",
+   "due": "Maintain",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "L",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "healthcare"
+     }
+    ]
+   },
+   "inputs": [
+    "Current tariff"
+   ],
+   "evidence": [
+    "Photo of display (dated)"
+   ],
+   "owner_role": "site_user",
+   "workflow": "fast",
+   "ai_templates": [
+    "patient_rights_charter"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.BMW.AUTH",
+   "title": "Bio-medical waste authorisation",
+   "category": "healthcare",
+   "law": "Bio-Medical Waste Management Rules, 2016",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Before expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "bmw_auth",
+    "days": 90
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "sectors",
+    "op": "contains",
+    "value": "healthcare"
+   },
+   "inputs": [
+    "Beds, waste quantities, CBWTF agreement"
+   ],
+   "evidence": [
+    "Authorisation"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://mpcb.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.BMW.AR",
+   "title": "BMW annual report (Form IV)",
+   "category": "healthcare",
+   "law": "BMW Rules, 2016 r.13",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "30 June",
+   "due_rule": {
+    "type": "annual",
+    "month": 6,
+    "day": 30
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "sectors",
+    "op": "contains",
+    "value": "healthcare"
+   },
+   "inputs": [
+    "Category-wise waste (yellow/red/white/blue) for calendar year",
+    "Training records"
+   ],
+   "evidence": [
+    "Form IV acknowledgement"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [
+    "bmw_form_iv"
+   ],
+   "source_url": "https://mpcb.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.BMW.WEB",
+   "title": "BMW monthly record on website; daily register; bar-coded bags",
+   "category": "healthcare",
+   "law": "BMW Rules, 2016 (as amended 2018)",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "Monthly website update",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 10
+   },
+   "risk": "M",
+   "applies": {
+    "all": [
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "healthcare"
+     },
+     {
+      "fact": "beds",
+      "op": "gt",
+      "value": 0
+     }
+    ]
+   },
+   "inputs": [
+    "CBWTF manifests",
+    "Daily weights"
+   ],
+   "evidence": [
+    "Website screenshot",
+    "Register extract"
+   ],
+   "owner_role": "maker:ehs",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.BMW.TRAIN",
+   "title": "BMW training & staff immunisation",
+   "category": "healthcare",
+   "law": "BMW Rules, 2016 r.4",
+   "authority": "State PCB",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Annual training",
+   "due_rule": {
+    "type": "annual",
+    "month": 12,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "sectors",
+    "op": "contains",
+    "value": "healthcare"
+   },
+   "inputs": [
+    "Staff list"
+   ],
+   "evidence": [
+    "Training attendance",
+    "Immunisation records"
+   ],
+   "owner_role": "maker:hr",
+   "workflow": "standard",
+   "ai_templates": [
+    "training_module"
+   ],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.PNDT.MR",
+   "title": "PC-PNDT monthly report & Form F completeness",
+   "category": "healthcare",
+   "law": "PC & PNDT Act, 1994 and Rules",
+   "authority": "Appropriate Authority",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "By 5th of following month",
+   "due_rule": {
+    "type": "monthly_day",
+    "day": 5
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "ultrasound_units",
+    "op": "gt",
+    "value": 0
+   },
+   "inputs": [
+    "Form F for every USG (online)",
+    "Machine register"
+   ],
+   "evidence": [
+    "Monthly report acknowledgement"
+   ],
+   "owner_role": "maker:clinical",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "Imprisonment, fine, sealing of machine",
+   "audit_point": "Sample Form F: 100% fields complete, declarations signed",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.PNDT.REG",
+   "title": "PC-PNDT registration renewal",
+   "category": "healthcare",
+   "law": "PC & PNDT Rules",
+   "authority": "Appropriate Authority",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Every 5 years, 30 days before expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "pndt_reg",
+    "days": 30
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "ultrasound_units",
+    "op": "gt",
+    "value": 0
+   },
+   "inputs": [
+    "Machines, qualified operators"
+   ],
+   "evidence": [
+    "Renewed registration"
+   ],
+   "owner_role": "maker:clinical",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.AERB.LIC",
+   "title": "AERB licence (eLORA) for X-ray/CT — renewal",
+   "category": "healthcare",
+   "law": "Atomic Energy (Radiation Protection) Rules, 2004",
+   "authority": "AERB",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Before expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "aerb_licence",
+    "days": 90
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "xray_units",
+    "op": "gt",
+    "value": 0
+   },
+   "inputs": [
+    "Equipment, QA reports, RSO"
+   ],
+   "evidence": [
+    "eLORA licence"
+   ],
+   "owner_role": "maker:clinical",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "https://elora.aerb.gov.in",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.AERB.TLD",
+   "title": "Personnel radiation monitoring (TLD) & QA tests",
+   "category": "healthcare",
+   "law": "AERB safety code / RP Rules",
+   "authority": "AERB",
+   "jurisdiction": "IN",
+   "frequency": "quarterly",
+   "due": "Quarterly TLD; QA as prescribed",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "03-31",
+     "06-30",
+     "09-30",
+     "12-31"
+    ]
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "xray_units",
+    "op": "gt",
+    "value": 0
+   },
+   "inputs": [
+    "Radiation workers list"
+   ],
+   "evidence": [
+    "TLD dose reports",
+    "QA certificate"
+   ],
+   "owner_role": "maker:clinical",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.DRUG",
+   "title": "Drug licence (retail) — validity, pharmacist, Schedule H1 register",
+   "category": "healthcare",
+   "law": "Drugs and Cosmetics Act, 1940 & Rules",
+   "authority": "FDA (State)",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Retention before due",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "drug_licence",
+    "days": 90
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "pharmacy",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Registered pharmacist details",
+    "H1 register"
+   ],
+   "evidence": [
+    "Licence, retention fee challan"
+   ],
+   "owner_role": "maker:pharmacy",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.NDPS",
+   "title": "NDPS: recognised medical institution, stock registers",
+   "category": "healthcare",
+   "law": "NDPS Act, 1985 & rules (essential narcotic drugs)",
+   "authority": "State Drugs Controller",
+   "jurisdiction": "IN",
+   "frequency": "monthly",
+   "due": "Monthly stock reconciliation (verify returns)",
+   "due_rule": {
+    "type": "month_end"
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "ndps_stock",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Receipts, issues, balance"
+   ],
+   "evidence": [
+    "Signed stock register extract"
+   ],
+   "owner_role": "maker:pharmacy",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.BLOOD",
+   "title": "Blood centre licence — renewal",
+   "category": "healthcare",
+   "law": "Drugs and Cosmetics Rules (blood centres)",
+   "authority": "CDSCO / State FDA",
+   "jurisdiction": "IN",
+   "frequency": "renewal",
+   "due": "Before expiry",
+   "due_rule": {
+    "type": "before_expiry",
+    "licence": "blood_licence",
+    "days": 90
+   },
+   "risk": "H",
+   "applies": {
+    "fact": "blood_centre",
+    "op": "eq",
+    "value": true
+   },
+   "inputs": [
+    "Licence, staff"
+   ],
+   "evidence": [
+    "Renewed licence"
+   ],
+   "owner_role": "maker:clinical",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.HC.CALIB",
+   "title": "Biomedical equipment calibration & preventive maintenance",
+   "category": "healthcare",
+   "law": "Quality standards (NABH) / manufacturer requirements",
+   "authority": "Internal / NABH",
+   "jurisdiction": "IN",
+   "frequency": "annual",
+   "due": "Per asset schedule",
+   "due_rule": {
+    "type": "annual",
+    "month": 3,
+    "day": 31
+   },
+   "risk": "M",
+   "applies": {
+    "fact": "sectors",
+    "op": "contains",
+    "value": "healthcare"
+   },
+   "inputs": [
+    "Asset register with calibration due dates"
+   ],
+   "evidence": [
+    "Calibration certificates"
+   ],
+   "owner_role": "maker:biomed",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.CON.EREG",
+   "title": "Registration of establishment for building / construction work",
+   "category": "construction",
+   "law": "OSH Code, 2020 (building or other construction work)",
+   "authority": "Registering Officer",
+   "jurisdiction": "IN",
+   "frequency": "one_time",
+   "due": "Before commencement of work",
+   "due_rule": {
+    "type": "one_time"
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "construction"
+     },
+     {
+      "fact": "construction_active",
+      "op": "eq",
+      "value": true
+     },
+     {
+      "fact": "construction_workers",
+      "op": "gte",
+      "value": 10
+     }
+    ]
+   },
+   "inputs": [
+    "Project, location, cost, workers, duration"
+   ],
+   "evidence": [
+    "Registration certificate"
+   ],
+   "owner_role": "maker:pm",
+   "workflow": "high_risk",
+   "ai_templates": [],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.CON.CESS",
+   "title": "Building & other construction workers cess (1% of cost)",
+   "category": "construction",
+   "law": "Code on Social Security, 2020 (BOCW cess)",
+   "authority": "Cess assessing officer / welfare board",
+   "jurisdiction": "IN",
+   "frequency": "event",
+   "due": "As per self-assessment & payment schedule (verify)",
+   "due_rule": {
+    "type": "event_within",
+    "event": "construction_milestone",
+    "days": 30
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "construction"
+     },
+     {
+      "fact": "construction_active",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Cost of construction to date"
+   ],
+   "evidence": [
+    "Cess payment receipt",
+    "Self-assessment"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [
+    "cess_working"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "Interest and penalty on unpaid cess",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.CON.SAFETY",
+   "title": "Site safety: daily checklist, scaffolding/lifting inspection, PPE, welfare",
+   "category": "construction",
+   "law": "OSH Code, 2020 + building work rules; NBC Part 7",
+   "authority": "Inspector-cum-Facilitator",
+   "jurisdiction": "IN",
+   "frequency": "continuous",
+   "due": "Daily / weekly checklists",
+   "due_rule": {
+    "type": "monthly_selfcheck"
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "sectors",
+      "op": "contains",
+      "value": "construction"
+     },
+     {
+      "fact": "construction_active",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Checklist responses, photos"
+   ],
+   "evidence": [
+    "Signed checklists, photos"
+   ],
+   "owner_role": "site_user",
+   "workflow": "fast",
+   "ai_templates": [
+    "toolbox_talk"
+   ],
+   "source_url": "",
+   "verify": false,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.RERA.QPR",
+   "title": "MahaRERA quarterly project progress update",
+   "category": "construction",
+   "law": "RERA 2016 s.11; MahaRERA regulations",
+   "authority": "MahaRERA",
+   "jurisdiction": "IN-MH",
+   "frequency": "quarterly",
+   "due": "Within 7 days of quarter end (verify)",
+   "due_rule": {
+    "type": "dates",
+    "dates": [
+     "01-07",
+     "04-07",
+     "07-07",
+     "10-07"
+    ]
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "rera_project",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Units booked, construction status, approvals"
+   ],
+   "evidence": [
+    "Portal update screenshot"
+   ],
+   "owner_role": "maker:pm",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://maharera.maharashtra.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "MH.RERA.FORM5",
+   "title": "RERA annual audited statement of project account (Form 5)",
+   "category": "construction",
+   "law": "RERA 2016 s.4(2)(l)(D)",
+   "authority": "MahaRERA",
+   "jurisdiction": "IN-MH",
+   "frequency": "annual",
+   "due": "Within 6 months of FY end (verify)",
+   "due_rule": {
+    "type": "annual",
+    "month": 9,
+    "day": 30
+   },
+   "risk": "H",
+   "applies": {
+    "all": [
+     {
+      "fact": "state",
+      "op": "eq",
+      "value": "MH"
+     },
+     {
+      "fact": "rera_project",
+      "op": "eq",
+      "value": true
+     }
+    ]
+   },
+   "inputs": [
+    "Project account statement, CA certificate"
+   ],
+   "evidence": [
+    "Form 5 upload"
+   ],
+   "owner_role": "maker:accounts",
+   "workflow": "standard",
+   "ai_templates": [],
+   "source_url": "https://maharera.maharashtra.gov.in",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.DPDP.PROG",
+   "title": "DPDP: notices, consent, rights, retention, breach response (full compliance by 13-May-2027)",
+   "category": "data_protection",
+   "law": "Digital Personal Data Protection Act, 2023 & DPDP Rules, 2025",
+   "authority": "Data Protection Board of India",
+   "jurisdiction": "IN",
+   "frequency": "one_time",
+   "due": "Programme milestones to 13 May 2027",
+   "due_rule": {
+    "type": "fixed",
+    "date": "2027-05-13"
+   },
+   "risk": "M",
+   "applies": {
+    "all": []
+   },
+   "inputs": [
+    "Personal data inventory (employees, patients, customers)",
+    "Processors list"
+   ],
+   "evidence": [
+    "Privacy notice",
+    "Retention schedule",
+    "Breach runbook",
+    "Processor DPAs"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "standard",
+   "ai_templates": [
+    "privacy_notice",
+    "retention_schedule"
+   ],
+   "source_url": "https://www.meity.gov.in",
+   "verify": false,
+   "penalty": "Penalties up to ₹250 crore per breach category",
+   "audit_point": "",
+   "review": "sme_pending"
+  },
+  {
+   "id": "IN.DPDP.BREACH",
+   "title": "Personal data breach intimation to Board & affected persons",
+   "category": "data_protection",
+   "law": "DPDP Rules, 2025",
+   "authority": "Data Protection Board of India",
+   "jurisdiction": "IN",
+   "frequency": "event",
+   "due": "Without delay; detailed report within prescribed time (verify)",
+   "due_rule": {
+    "type": "event_within",
+    "event": "data_breach",
+    "days": 3
+   },
+   "risk": "H",
+   "applies": {
+    "all": []
+   },
+   "inputs": [
+    "Breach facts, data affected, mitigation"
+   ],
+   "evidence": [
+    "Intimation copies"
+   ],
+   "owner_role": "maker:admin",
+   "workflow": "event",
+   "ai_templates": [
+    "breach_intimation"
+   ],
+   "source_url": "",
+   "verify": true,
+   "penalty": "",
+   "audit_point": "",
+   "review": "sme_pending"
+  }
+ ]
+}

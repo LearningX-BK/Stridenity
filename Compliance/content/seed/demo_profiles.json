@@ -1,0 +1,32 @@
+{
+ "note": "Fictional demo tenants (PRD §7). Facts keyed as in obligations.seed.json. Anchor date 2026-10-15.",
+ "tenants": [
+  {"key": "mfg", "name": "Sahyadri Precision Components Pvt Ltd", "unit": "Ambernath Plant (MIDC)", "district": "Thane",
+   "facts": {"state": "MH", "legal_form": "pvt_ltd", "sectors": ["manufacturing"], "employees": 146, "contract_workers": 38,
+    "uses_power": true, "hazardous_process": false, "gst_registered": true, "gst_qrmp": false, "turnover_cr": 64,
+    "pcb_category": "orange", "hazardous_waste": true, "plastic_packaging": true, "ewaste_bulk": false, "dg_set_kva": 250,
+    "has_boiler": true, "has_pressure_vessel": true, "has_lifting": true, "has_lift": false, "fire_noc_required": true,
+    "ht_installation": true, "electrical_contractor": false, "weighing_instruments": true, "packaged_goods": false,
+    "beds": 0, "xray_units": 0, "ultrasound_units": 0, "pharmacy": false, "ndps_stock": false, "blood_centre": false,
+    "construction_active": false, "construction_workers": 0, "rera_project": false, "owes_mse_suppliers": true},
+   "licences": {"factory_licence": "2027-03-31", "cto": "2027-01-23", "boiler_cert": "2026-11-20", "lm_stamp": "2026-12-10", "elec_inspection": "2028-06-30"}},
+  {"key": "hospital", "name": "Kalyan Care Multispeciality Hospital Pvt Ltd", "unit": "Kalyan Hospital (60 beds)", "district": "Thane",
+   "facts": {"state": "MH", "legal_form": "pvt_ltd", "sectors": ["healthcare"], "employees": 212, "contract_workers": 46,
+    "uses_power": false, "hazardous_process": false, "gst_registered": true, "gst_qrmp": false, "turnover_cr": 38,
+    "pcb_category": "orange", "hazardous_waste": false, "plastic_packaging": false, "ewaste_bulk": true, "dg_set_kva": 320,
+    "has_boiler": false, "has_pressure_vessel": true, "has_lifting": false, "has_lift": true, "fire_noc_required": true,
+    "ht_installation": true, "electrical_contractor": false, "weighing_instruments": false, "packaged_goods": false,
+    "beds": 60, "xray_units": 2, "ultrasound_units": 2, "pharmacy": true, "ndps_stock": true, "blood_centre": false,
+    "construction_active": false, "construction_workers": 0, "rera_project": false, "owes_mse_suppliers": true},
+   "licences": {"nh_registration": "2027-03-31", "bmw_auth": "2027-06-30", "pndt_reg": "2026-11-14", "aerb_licence": "2028-02-01", "drug_licence": "2027-09-30", "cto": "2027-08-31", "lift_licence": "2026-12-05", "elec_inspection": "2027-04-30"}},
+  {"key": "infra", "name": "Konkan Infra & Electricals LLP", "unit": "Project Sahyadri Heights, Badlapur", "district": "Thane",
+   "facts": {"state": "MH", "legal_form": "llp", "sectors": ["construction", "electrical"], "employees": 34, "contract_workers": 240,
+    "uses_power": false, "hazardous_process": false, "gst_registered": true, "gst_qrmp": false, "turnover_cr": 48,
+    "pcb_category": "green", "hazardous_waste": false, "plastic_packaging": false, "ewaste_bulk": false, "dg_set_kva": 125,
+    "has_boiler": false, "has_pressure_vessel": false, "has_lifting": true, "has_lift": false, "fire_noc_required": false,
+    "ht_installation": true, "electrical_contractor": true, "weighing_instruments": false, "packaged_goods": false,
+    "beds": 0, "xray_units": 0, "ultrasound_units": 0, "pharmacy": false, "ndps_stock": false, "blood_centre": false,
+    "construction_active": true, "construction_workers": 260, "rera_project": true, "owes_mse_suppliers": true},
+   "licences": {"elec_contractor_licence": "2026-12-31", "cto": "2027-05-31", "elec_inspection": "2027-02-28"}}
+ ]
+}

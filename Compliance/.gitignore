@@ -1,0 +1,49 @@
+# secrets & local state
+.env
+.env.*
+!.env.example
+data/*.db
+data/*.db-*
+data/models/
+data/uploads/
+# local object storage (LocalFS backend)
+data/objects/
+.build-logs/
+.claude/settings.local.json
+CLAUDE.local.md
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# node
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+
+# os/editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+# scripts/ui_check.py scratch state
+data/ui-check.*
+# build-loop.ps1 pause flag
+PAUSE
+
+# release artefacts
+/release/
+
+# generated encryption key (ADR-021) - never commit or ship
+data/secret.key
+docs/screens/**/*.png
+!docs/screens/README.md

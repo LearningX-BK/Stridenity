@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git pull:*)",
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(git stash:*)",
+      "Bash(git merge:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git restore:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(py:*)",
+      "Bash(uv:*)",
+      "Bash(uvx:*)",
+      "Bash(pip:*)",
+      "Bash(pytest:*)",
+      "Bash(ruff:*)",
+      "Bash(mypy:*)",
+      "Bash(alembic:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(pnpm:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(echo:*)",
+      "Bash(curl -s http://localhost:*)",
+      "Bash(curl http://localhost:*)",
+      "Bash(curl -s http://127.0.0.1:*)",
+      "Bash(curl http://127.0.0.1:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker build:*)",
+      "Bash(powershell -File scripts/*)",
+      "Bash(pwsh -File scripts/*)",
+      "Edit",
+      "Write",
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(cd:*)",
+      "Bash(sleep:*)",
+      "Bash(timeout:*)",
+      "Bash(sort:*)",
+      "Bash(diff:*)",
+      "WebFetch(domain:labour.gov.in)",
+      "WebFetch(domain:shramsuvidha.gov.in)",
+      "WebFetch(domain:www.epfindia.gov.in)",
+      "WebFetch(domain:epfindia.gov.in)",
+      "WebFetch(domain:www.esic.gov.in)",
+      "WebFetch(domain:esic.gov.in)",
+      "WebFetch(domain:www.incometax.gov.in)",
+      "WebFetch(domain:incometax.gov.in)",
+      "WebFetch(domain:www.gst.gov.in)",
+      "WebFetch(domain:cbic-gst.gov.in)",
+      "WebFetch(domain:www.mca.gov.in)",
+      "WebFetch(domain:mca.gov.in)",
+      "WebFetch(domain:mpcb.gov.in)",
+      "WebFetch(domain:cpcb.nic.in)",
+      "WebFetch(domain:eprplastic.cpcb.gov.in)",
+      "WebFetch(domain:moef.gov.in)",
+      "WebFetch(domain:parivesh.nic.in)",
+      "WebFetch(domain:cea.nic.in)",
+      "WebFetch(domain:dpiit.gov.in)",
+      "WebFetch(domain:aerb.gov.in)",
+      "WebFetch(domain:elora.aerb.gov.in)",
+      "WebFetch(domain:cdsco.gov.in)",
+      "WebFetch(domain:pndt.gov.in)",
+      "WebFetch(domain:mohfw.gov.in)",
+      "WebFetch(domain:nabh.co)",
+      "WebFetch(domain:meity.gov.in)",
+      "WebFetch(domain:egazette.gov.in)",
+      "WebFetch(domain:indiacode.nic.in)",
+      "WebFetch(domain:prsindia.org)",
+      "WebFetch(domain:maharashtra.gov.in)",
+      "WebFetch(domain:mahakamgar.maharashtra.gov.in)",
+      "WebFetch(domain:mahagst.gov.in)",
+      "WebFetch(domain:maharera.maharashtra.gov.in)",
+      "WebFetch(domain:mahafireservice.gov.in)",
+      "WebFetch(domain:public.mlwb.in)",
+      "WebFetch(domain:mahabocw.in)",
+      "WebFetch(domain:consumeraffairs.nic.in)",
+      "WebFetch(domain:bis.gov.in)",
+      "WebFetch(domain:peso.gov.in)",
+      "WebFetch(domain:wcd.nic.in)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebSearch",
+      "Bash(lint-imports:*)",
+      "Bash(bash scripts/*)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git rebase:*)",
+      "Bash(git clean:*)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Read(./.env)",
+      "Read(./backend/.env)",
+      "Read(./data/secret.key)"
+    ]
+  },
+  "env": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/run.sh\" session_start.py",
+            "timeout": 900
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/run.sh\" stop_checkpoint.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

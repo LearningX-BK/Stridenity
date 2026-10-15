@@ -1,0 +1,364 @@
+{
+  "version": 1,
+  "builder": {},
+  "tasks": [
+    {
+      "id": "T00",
+      "title": "Repo scaffold & tooling",
+      "model": "sonnet",
+      "deps": [],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T01",
+      "title": "Headless UI check & test fixtures",
+      "model": "sonnet",
+      "deps": [
+        "T00"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "title": "Tenancy core & control-plane registry",
+      "model": "opus",
+      "deps": [
+        "T00"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "title": "Identity, RBAC & audit log",
+      "model": "sonnet",
+      "deps": [
+        "T02"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "title": "App shell & design system",
+      "model": "sonnet",
+      "deps": [
+        "T03"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "title": "Organisation, units & profile facts",
+      "model": "sonnet",
+      "deps": [
+        "T03"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "title": "Content packs: schema, loader, versioning",
+      "model": "opus",
+      "deps": [
+        "T05"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "title": "Applicability engine, register & overrides",
+      "model": "opus",
+      "deps": [
+        "T06"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "title": "Central pack content — verified",
+      "model": "sonnet",
+      "deps": [
+        "T06"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "title": "Maharashtra & sector packs — verified",
+      "model": "sonnet",
+      "deps": [
+        "T08"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T10",
+      "title": "Calendar engine & instances",
+      "model": "opus",
+      "deps": [
+        "T07"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T11",
+      "title": "Workflow & approval engine",
+      "model": "opus",
+      "deps": [
+        "T10"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T12",
+      "title": "Jobs, reminders & notifications",
+      "model": "sonnet",
+      "deps": [
+        "T11"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T13",
+      "title": "Evidence vault & licences register",
+      "model": "sonnet",
+      "deps": [
+        "T10"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T14",
+      "title": "LLM gateway, redaction & AIAction",
+      "model": "sonnet",
+      "deps": [
+        "T02"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T15",
+      "title": "Guided intake & computations",
+      "model": "sonnet",
+      "deps": [
+        "T13"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T16",
+      "title": "AI content generation & document workflow",
+      "model": "sonnet",
+      "deps": [
+        "T14",
+        "T11"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T17",
+      "title": "AI extraction & evidence verification",
+      "model": "sonnet",
+      "deps": [
+        "T14",
+        "T13"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T18",
+      "title": "Compliance copilot (RAG)",
+      "model": "sonnet",
+      "deps": [
+        "T14",
+        "T09"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T19",
+      "title": "Onboarding wizard & register review UI",
+      "model": "sonnet",
+      "deps": [
+        "T07",
+        "T04"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T20",
+      "title": "Home, calendar & inbox UI",
+      "model": "sonnet",
+      "deps": [
+        "T12",
+        "T19"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T21",
+      "title": "Obligation workspace",
+      "model": "sonnet",
+      "deps": [
+        "T15",
+        "T16",
+        "T20"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T22",
+      "title": "Evidence & licences UI with extraction review",
+      "model": "sonnet",
+      "deps": [
+        "T17",
+        "T21"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T23",
+      "title": "Audits, inspections, notices & CAPA",
+      "model": "sonnet",
+      "deps": [
+        "T21"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T24",
+      "title": "Contractor compliance portal",
+      "model": "sonnet",
+      "deps": [
+        "T21"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T25",
+      "title": "Regulatory change management",
+      "model": "sonnet",
+      "deps": [
+        "T21"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T26",
+      "title": "Reports & external auditor portal",
+      "model": "sonnet",
+      "deps": [
+        "T23",
+        "T24",
+        "T25"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T27",
+      "title": "Operator console (/ops) & SaaS operations",
+      "model": "sonnet",
+      "deps": [
+        "T26"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T28",
+      "title": "Demo tenants & planted stories",
+      "model": "sonnet",
+      "deps": [
+        "T27"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T29",
+      "title": "Languages & site-user PWA",
+      "model": "sonnet",
+      "deps": [
+        "T28"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T30",
+      "title": "Security, isolation & DPDP hardening",
+      "model": "opus",
+      "deps": [
+        "T29"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T31",
+      "title": "Packaging & deployment",
+      "model": "sonnet",
+      "deps": [
+        "T30"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T32a",
+      "title": "Final quality gate & performance",
+      "model": "sonnet",
+      "deps": [
+        "T31"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T32b",
+      "title": "Code & security review",
+      "model": "opus",
+      "deps": [
+        "T32a"
+      ],
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "T32c",
+      "title": "UI/accessibility pass & demo rehearsal",
+      "model": "sonnet",
+      "deps": [
+        "T32b"
+      ],
+      "status": "pending",
+      "note": ""
+    }
+  ]
+}
